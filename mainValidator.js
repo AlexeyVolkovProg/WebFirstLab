@@ -37,51 +37,71 @@ yField.addEventListener('input', (event) => {
     console.log(yField.value)
 })
 
+
+function resetForm() {
+    xValue = null;
+    yValue = null;
+    rValue = null;
+    xButtonList.forEach((btn) => {
+        btn.classList.remove("x-button-active");
+    });
+    rButtons.forEach((button) => {
+        button.checked = false;
+    });
+    yField.value = '';
+}
+
+window.addEventListener('load', resetForm);
+
 function checkValueX() {
     if (xValue) {
         return true;
-    } else {
-        return false
-    }
-}
-
-function checkValueY() {
-    if (yValue) {
+    } else if (xValue === 0) {
         return true;
-    } else {
-        return false
     }
-}
-
-function checkValueR() {
-    if (rValue) {
-        return true;
-    } else {
-        return false
+    else
+        {
+            return false
+        }
     }
-}
 
-$(document).ready(function () {
-    $(".user-form").on('submit', function (event) {
-        event.preventDefault();
-        console.log(xValue, yValue, rValue);
-        if (checkValueX() && checkValueY() && checkValueR()) {
-            const queryString = `x=${xValue}&y=${yValue}&r=${rValue}&timeClient=${timeClient}`;
-            console.log(timeClient);
-            const url = `server.php?${queryString}`;
-            $.ajax({
-                url: url,
-                method: 'GET',
-                success: function (response) {
-                    document.querySelector(".table-results").innerHTML = "";
-                    let results;
-                    console.log(response);
-                    try {
-                        results = JSON.parse(response);
-                    } catch (error) {
-                        console.error("Ошибка при разборе JSON:", error);
-                    }
-                    const tableHeader = `
+    function checkValueY() {
+        if (yValue) {
+            return true;
+        } else {
+            return false
+        }
+    }
+
+    function checkValueR() {
+        if (rValue) {
+            return true;
+        } else {
+            return false
+        }
+    }
+
+    $(document).ready(function () {
+        $(".user-form").on('submit', function (event) {
+            event.preventDefault();
+            console.log(xValue, yValue, rValue);
+            if (checkValueX() && checkValueY() && checkValueR()) {
+                const queryString = `x=${xValue}&y=${yValue}&r=${rValue}&timeClient=${timeClient}`;
+                console.log(timeClient);
+                const url = `server.php?${queryString}`;
+                $.ajax({
+                    url: url,
+                    method: 'GET',
+                    success: function (response) {
+                        document.querySelector(".table-results").innerHTML = "";
+                        let results;
+                        console.log(response);
+                        try {
+                            results = JSON.parse(response);
+                        } catch (error) {
+                            console.error("Ошибка при разборе JSON:", error);
+                        }
+                        const tableHeader = `
                             <tr>
                                 <th>X</th>
                                 <th>Y</th>
@@ -91,9 +111,9 @@ $(document).ready(function () {
                                 <th>Результат</th>
                             </tr>
                         `;
-                    document.querySelector(".table-results").insertAdjacentHTML('beforeend', tableHeader);
-                    results.forEach(result => {
-                        const row = `
+                        document.querySelector(".table-results").insertAdjacentHTML('beforeend', tableHeader);
+                        results.forEach(result => {
+                            const row = `
                 <tr>
                     <td>${result.x}</td>
                     <td>${result.y}</td>
@@ -103,11 +123,11 @@ $(document).ready(function () {
                     <td>${result.res}</td>
                 </tr>
             `;
-                        document.querySelector(".table-results").insertAdjacentHTML('beforeend', row);
+                            document.querySelector(".table-results").insertAdjacentHTML('beforeend', row);
 
-                    });
-                }
-            });
-        }
+                        });
+                    }
+                });
+            }
+        });
     });
-});

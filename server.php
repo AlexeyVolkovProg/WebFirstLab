@@ -3,8 +3,8 @@
 $x = isset($_GET['x']) ? floatval($_GET['x']) : null;
 $y = isset($_GET['y']) ? floatval($_GET['y']) : null;
 $r = isset($_GET['r']) ? floatval($_GET['r']) : null;
-$currentTime = isset($_GET['timeClient']) ? $_GET['timeClient'] : null;
-if ($currentTime === null) {
+$currentTime = isset($_GET['timeClient']) ? intval($_GET['timeClient']) : null;
+if ($currentTime == null) {
     $formattedTime = 'Нет данных'; // Здесь можно установить любое значение по умолчанию
 } else {
     // Если $currentTime существует, то форматируем его как дату и время
