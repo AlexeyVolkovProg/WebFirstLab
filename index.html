@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="stylePage.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="content">
+        <div class="site-header">
+            <div class="header-section">
+                <div class="logo">
+                    <a href="https://itmo.ru/?out">
+                        <img src="images/itmo-logo-dark.svg" alt="">
+                    </a>
+                </div>
+                <div class="lab-info">
+                    <p>Лабораторная работа №1</p>
+                </div>
+                <div class="owner-info">
+                    <p>Волков Алексей</p>
+                    <p>Группа: P3213</p>
+                    <p>Вариант: 2302</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-question">
+            <p>Попадет ли ваша точка в закрашенную область?</p>
+        </div>
+
+        <div class="main-content">
+            <div class="diagram-section">
+                <img class="diagram_image" src="images/diagram.png" alt="diagram_image">
+            </div>
+            <div class="user-form-section">
+                <form class="user-form" action="#" method="get">
+                    <div class="x_coordinate block">
+                        <div class="button_block">
+                            <label>X:</label>
+                            <button type="button" class="x_button" id="b-1.5">-1.5</button>
+                            <button type="button" class="x_button" id="b-1">-1</button>
+                            <button type="button" class="x_button" id="b-0.5">-0.5</button>
+                            <button type="button" class="x_button" id="b0" >0</button>
+                            <button type="button" class="x_button" id="b0.5">0.5</button>
+                            <button type="button" class="x_button" id="b1" >1</button>
+                            <button type="button" class="x_button" id="b1.5">1.5</button>
+                            <button type="button" class="x_button" id="b2">2</button>
+                        </div>
+                    </div>
+                    <div class="y_coordinate block">
+                        <label for="selector_y">Y:</label>
+                        <input placeholder="Coordinate Y [-5;5]" type="text" name="Coordinate Y" id="selector_y" maxlength="6" tabindex="2">
+                    </div>
+                    <div class="r_coordinate block">
+                        <div class="radio-buttons" id="selector_r">
+                            <label>R:</label>
+                            <div class="radio-label">
+                                <input type="radio" class="r-radio" id = "r1" value="1" name="r-button">
+                                <label>1</label>
+                            </div>
+                            <div class="radio-label">
+                                <input type="radio" class="r-radio" id = "r1.5" value="1.5" name="r-button">
+                                <label>1.5</label></div>
+                            <div class="radio-label">
+                                <input type="radio" class="r-radio" id = "r2" value="2" name="r-button">
+                                <label >2</label></div>
+                            <div class="radio-label">
+                                <input type="radio" class="r-radio" id = "r2.5" value="2.5" name="r-button"> <!-- одинаковые name у radio button дают возможность выбрать 1 кнопку в контексте name -->
+                                <label>2.5</label></div>
+                            <div class="radio-label">
+                                <input type="radio" class="r-radio" id = "r3" value="3" name="r-button">
+                                <label>3</label></div>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit">Send</button>
+                        <button class="clearButton" type="reset">Clear</button>
+                    </div>
+                </form>
+            </div>
+            <div class="table-section">
+                <table class="table-results">
+                    <tr>
+                        <th>X</th>
+                        <th>Y</th>
+                        <th>R</th>
+                        <th>Время запуска</th>
+                        <th>Время работы</th>
+                        <th>Результат</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="mainValidator.js"></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+.header-section{
+ display: flex;
+ justify-content: space-between ; /* Выравнивание вдоль главной оси */
+ flex-wrap: wrap;
+ padding: 0; /* Убираем внутренние отступы */
+ margin: 0; /* Убираем внешние отступы */
+ background: white;
+ font-family: Arial, serif;
+ opacity: 0.75;
+}
+
+/* Стилизация заголовка */
+.lab-info p {
+ font-size: 40px; /* Размер шрифта */
+ font-weight: bold; /* Жирный шрифт */
+ text-transform: uppercase; /* Преобразование текста в заглавные буквы */
+ font-family: "cursive", serif; /* Выберите желаемый шрифт */
+ color: #000000; /* Цвет текста */
+ opacity: 1;
+}
+
+.main-question{
+ margin: 40px;
+ text-align: center;
+ font-size: 40px;
+ font-weight: bold;
+ text-transform: uppercase;
+ font-family: "cursive", serif;
+ color: #7300ff;
+ background-color: #f0f0f0; /* Цвет фона */
+ padding: 10px 20px; /* Внутренний отступ вокруг текста */
+ border: 2px solid #7300ff; /* Толщина, стиль и цвет рамки */
+ border-radius: 10px; /* Закругление углов рамки */
+ opacity: 1;
+}
+
+
+.logo{
+ flex:1;
+ text-align: center;
+ display: flex; /* Используем флекс-контейнер для выравнивания по центру вертикально */
+ flex-direction: column; /* Устанавливаем направление контейнера на столбцы */
+ justify-content: center; /* Выравнивание по центру вертикально */
+ align-items: center; /* Выравнивание по центру горизонтально */
+}
+
+.owner-info{
+ flex:1;
+ text-align: center;
+ display: flex; /* Используем флекс-контейнер для выравнивания по центру вертикально */
+ flex-direction: column; /* Устанавливаем направление контейнера на столбцы */
+ justify-content: center; /* Выравнивание по центру вертикально */
+ align-items: center; /* Выравнивание по центру горизонтально */
+ font-weight: bold; /* Жирный шрифт */
+}
+
+.lab-info{
+ flex:1;
+ background: #007bff;
+ text-align: center;
+ border: 5px solid #0c0a0a; /* Толщина, стиль и цвет рамки */
+}
+
+.main-content{
+  display: flex;
+  justify-content: space-between ; /* Выравнивание вдоль главной оси */
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+}
+
+.diagram-section,
+.user-form-section,
+.table-section {
+ flex: 1; /* Установка равной доли пространства для каждой составляющей */
+ padding: 10px; /* Добавление отступов, если необходимо */
+ box-sizing: border-box; /* Учесть padding внутри элементов */
+ min-width: 400px;
+}
+
+.diagram-section{
+ flex:1;
+ background: #1e1d0d;
+ opacity: 50%;
+}
+
+.diagram_image{ /* Картинку в половину flexbox ставим */
+ max-width: 100%;
+ height: auto;
+ border-radius: 10px;
+ box-shadow: 0 0 0 3px;
+}
+
+.user-form-section{
+ flex:1;
+ background: aqua;
+ opacity: 50%;
+ display: flex;
+ align-items: center; /* Центрирование по горизонтали */
+ justify-content: center; /* Центрирование по вертикали */
+}
+
+.user-form{
+ box-sizing: border-box;
+}
+
+.table-section{
+ flex:1;
+ background: aquamarine;
+ opacity: 50%;
+}
+
+.table-results{
+ background: #f7f7f7;
+ border-radius:10px ;
+ border: 3px solid black;
+ max-width: 100%;
+ text-align: center;
+ margin: 0 auto; /* Горизонтальное центрирование */
+}
+
+
+body{
+ background-image: url('images/forest.jpg'); /* Путь к изображению фона */
+ background-size: cover; /* Масштабирование изображения фона, чтобы оно заполнило весь экран */
+ background-repeat: no-repeat; /* Запрет повторения изображения фона */
+ background-attachment: fixed; /* Фон остается зафиксированным при прокрутке страницы */
+}
+
+/* Стили для формы */
+.user-form {
+ background-color: #fff;
+ border: 1px solid #ddd;
+ border-radius: 5px;
+ padding: 20px;
+ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+ max-width: 400px;
+ width: 100%;
+}
+
+/* Стили для разделов формы */
+.block {
+ margin-bottom: 15px;
+}
+
+/* Стили для меток */
+label {
+ font-weight: bold;
+ display: block;
+ margin-bottom: 5px;
+}
+
+/* Стили для кнопок */
+.x_button {
+ background-color: #007bff;
+ color: #fff;
+ border: none;
+ padding: 10px 15px;
+ margin-right: 5px;
+ margin-top: 5px;
+ cursor: pointer;
+ border-radius: 5px;
+}
+
+.x_button.selectButtonX {
+ background-color: #ffd500; /* Цвет фона при нажатии */
+}
+
+/* Стили для текстового поля Y */
+#Y {
+ width: 100%;
+ padding: 20px 20px 20px 20px;
+ border: 1px solid #0c0a0a;
+ border-radius: 5px;
+ box-sizing: border-box;
+}
+
+/* Стили для радиокнопок Z */
+
+/* Стили для контейнера с радиокнопками */
+.radio-buttons {
+ display: flex;
+ gap: 10px; /* Пространство между радиокнопками */
+}
+
+/* Стили для радиокнопок */
+.radio-buttons input[type="radio"] {
+ /* Убирает стандартные стили браузера */
+ width: 20px; /* Ширина кастомной радиокнопки */
+ height: 20px; /* Высота кастомной радиокнопки */
+ border-radius: 50%; /* Создает круглую форму */
+ border: 2px solid #007bff; /* Граница радиокнопки */
+ margin-right: 5px; /* Пространство между радиокнопками */
+}
+
+
+/* Стили для меток радиокнопок */
+.radio-buttons .radio-label {
+ cursor: pointer;
+}
+
+/* Стили для выбранных выбранной радиокнопок */
+.r-radio .selectRadioR {
+ background-color: #ffd500; /* Цвет фона при выборе */
+ border-color: #ffd500; /* Цвет границы при выборе */
+}
+
+/* Стили для радиокнопок и подписей к ним*/
+.radio-label{
+ display: flex;
+ flex-direction: column;
+ align-items: center; /* Выравнивание содержимого по центру вертикали */
+ text-align: center; /* Выравнивание текста по центру горизонтали */
+}
+
+
+/* Стили для кнопок отправки и сброса */
+button[type="submit"],
+button[type="reset"] {
+ background-color: #007bff;
+ color: #fff;
+ border: none;
+ padding: 10px 20px;
+ margin-right: 10px;
+ cursor: pointer;
+ border-radius: 5px;
+}
+
+/* Стили для кнопки Clear */
+button[type="reset"] {
+ background-color: #dc3545;
+}
+
+.x-button-active{
+  border: 3px solid black; 
+}
