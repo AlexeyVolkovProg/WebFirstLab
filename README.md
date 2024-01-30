@@ -1,5 +1,5 @@
 ## Задание
-![image](https://github.com/AlexeyVolkovProg/WebFirstLab/assets/130671134/bd4638b3-ddcd-46ab-b11c-69055d1c370c)
+![image](https://github.com/AlexeyVolkovProg/WebFirstLab/assets/130671134/4b26689c-5b3e-41cd-84f0-c7b8262be077)
 
 Разработать PHP-скрипт, определяющий попадание точки на координатной плоскости в заданную область, и создать HTML-страницу, которая формирует данные для отправки их на обработку этому скрипту.
 
